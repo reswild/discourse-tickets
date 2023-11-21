@@ -75,7 +75,7 @@ export default {
       };
 
       api.addTagsHtmlCallback((topic) => {
-        if (topic.is_ticket && topic.tags && currentUser && currentUser.staff) {
+        if (topic.is_ticket && topic.tags && currentUser && currentUser.can_edit) {
           hideTicketTags();
 
           const icon = siteSettings.tickets_icon;

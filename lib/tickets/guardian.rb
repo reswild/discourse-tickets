@@ -1,6 +1,6 @@
 module TicketsGuardian
   def can_create_ticket?(topic)
-    is_staff? && SiteSetting.tickets_enabled
+    can_perform_action_available_to_group_moderators?(topic) && SiteSetting.tickets_enabled
   end
 end
 
